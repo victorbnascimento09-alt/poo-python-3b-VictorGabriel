@@ -1,0 +1,55 @@
+class Conteudo:
+    def __init__(self, titulo, categoria):
+        self.titulo = titulo
+        self.categoria = categoria
+
+    def exibir_info(self):
+        print(f"{self.titulo} - {self.categoria}")
+
+
+class Filme(Conteudo):
+    def __init__(self, titulo, categoria, duracao):
+        super().__init__(titulo, categoria)
+        self.duracao = duracao
+
+    def exibir_info(self):
+        print(f"Filme: {self.titulo} - {self.categoria} - {self.duracao} minutos")
+
+
+class Serie(Conteudo):
+    def __init__(self, titulo, categoria, temporadas):
+        super().__init__(titulo, categoria)
+        self.temporadas = temporadas
+
+    def exibir_info(self):
+        print(f"Série: {self.titulo} - {self.categoria} - {self.temporadas} temporadas")
+
+
+class Documentario(Conteudo):
+    def __init__(self, titulo, categoria, tema):
+        super().__init__(titulo, categoria)
+        self.tema = tema
+
+    def exibir_info(self):
+        print(f"Documentário: {self.titulo} - {self.categoria} - Tema: {self.tema}")
+
+
+class Podcast(Conteudo):
+    def __init__(self, titulo, categoria, episodios):
+        super().__init__(titulo, categoria)
+        self.episodios = episodios
+
+    def exibir_info(self):
+        print(f"Podcast: {self.titulo} - {self.categoria} - {self.episodios} episódios")
+
+
+catalogo = [
+    Filme("Invocação do mal", "terro", 112),
+    Filme("A Odisseia", "Aventura", 172),
+    Serie("Desventura em Série ", "Ficcao", 3),
+    Serie("Perdidos no espaço ", "Suspense", 3),
+    Documentario("Narcos", "ficção", "drama policial"),
+    Podcast("PodPah", "Entrevista", 100)
+]
+
+for item in catalogo:
